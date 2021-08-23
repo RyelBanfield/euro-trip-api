@@ -2,12 +2,12 @@ class FavouritesController < SecuredController
   skip_before_action :authorize_request, only: [:index, :show]
   def index
     favourites = Favourite.all
-    render json: favourites, include: [:countries]
+    render json: favourites
   end
 
   def show
     favourite = Favourite.find(params[:id])
-    render json: favourite, include: [:countries]
+    render json: favourite
   rescue ActiveRecord::RecordNotFound
     head :not_found
   end
@@ -26,6 +26,6 @@ class FavouritesController < SecuredController
   private
 
   def favourite_params
-    params.permit(:sub, :country)
+    params.permit(:user_id, :country_id)
   end
 end

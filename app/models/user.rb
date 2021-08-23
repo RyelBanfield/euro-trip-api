@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :favourites, foreign_key: 'sub', primary_key: 'sub'
-  validates_presence_of :sub
+  has_many :favourites
+  has_many :countries, :through => :favourites
 end

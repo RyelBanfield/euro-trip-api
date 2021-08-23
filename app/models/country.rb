@@ -1,3 +1,4 @@
 class Country < ApplicationRecord
-  belongs_to :favourite, foreign_key: 'country', primary_key: 'name', optional: true
+  has_many :favourites
+  has_many :users, through: :favourites
 end

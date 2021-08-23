@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  validates_presence_of :sub, :email, :name, :given_name, :family_name, :picture
+  has_many :favourites, foreign_key: 'sub', primary_key: 'sub'
+  validates_presence_of :sub
 end

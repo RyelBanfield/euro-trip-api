@@ -13,7 +13,7 @@ class UsersController < SecuredController
   end
 
   def create
-    user = User.create!(chirp_params)
+    user = User.create!(user_params)
     render json: user, status: :created
   end
 
@@ -25,7 +25,7 @@ class UsersController < SecuredController
 
   private
 
-  def chirp_params
+  def user_params
     params.permit(:sub, :email, :name, :given_name, :family_name, :picture)
   end
 end

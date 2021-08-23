@@ -213,7 +213,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.4, >= 6.1.4.1)
   rspec-rails (~> 3.5)
-  rubocop (~> 1.19, >= 1.19.1)
+  rubocop (>= 1.0, < 2.0)
   shoulda-matchers (~> 3.1)
   spring
   tzinfo-data

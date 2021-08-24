@@ -1,6 +1,6 @@
 class ImagesController < SecuredController
-  skip_before_action :authorize_request, only: [:index, :show]
-  
+  skip_before_action :authorize_request, only: %i[index show]
+
   def index
     images = Image.all
     render json: images

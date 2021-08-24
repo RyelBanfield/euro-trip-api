@@ -28,3 +28,4 @@
 
 /config/credentials/development.key
 dev_key.txt
+.env

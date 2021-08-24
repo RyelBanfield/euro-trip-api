@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2021_08_24_075307) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "url"
     t.bigint "country_id", null: false
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_images_on_country_id"

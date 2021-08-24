@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 2021_08_24_075307) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
-    t.string "captial"
+    t.string "capital"
     t.string "population"
     t.string "language"
+    t.string "demonym"
     t.string "currency"
     t.string "flag"
     t.datetime "created_at", precision: 6, null: false

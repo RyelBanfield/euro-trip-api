@@ -27,6 +27,6 @@ class CountriesController < SecuredController
   private
 
   def country_params
-    params.permit(:name, :captial, :population, :language, :currency, :flag)
+    params.permit(:name, :capital, :population, :language, :demonym, :currency, :flag)
   end
 end

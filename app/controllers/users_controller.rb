@@ -1,5 +1,6 @@
 class UsersController < SecuredController
   skip_before_action :authorize_request, only: [:index, :show]
+
   def index
     users = User.all
     render json: users, include: [:countries]

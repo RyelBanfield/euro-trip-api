@@ -32,14 +32,22 @@ countriesJSON.each do |country|
     flag: country['flag']
   )
 
-  # Images.concat(HTTParty.get("https://api.unsplash.com/search/photos/?client_id=#{accessKey}&query=#{URLify.urlify(country['capital'], '-')}&per_page=5&orientation=landscape").parsed_response['results'] ? HTTParty.get("https://api.unsplash.com/search/photos/?client_id=#{accessKey}&query=#{URLify.urlify(country['capital'], '-')}&per_page=5&orientation=landscape").parsed_response['results'] : [])
+  Images.concat(HTTParty.get("https://api.unsplash.com/search/photos/?client_id=#{accessKey}&query=#{URLify.urlify(country['capital'], '-')}&per_page=5&orientation=landscape").parsed_response['results'] ? HTTParty.get("https://api.unsplash.com/search/photos/?client_id=#{accessKey}&query=#{URLify.urlify(country['capital'], '-')}&per_page=5&orientation=landscape").parsed_response['results'] : [])
 
 
-  # Images.each do |image|
-  #   Image.create(
-  #     country_id: Country.last.id,
-  #     url: image['urls']['regular']
-  #   )
-  # end
-  # Images.clear
+  Images.each do |image|
+    Image.create(
+      country_id: Country.last.id,
+      url: image['urls']['regular']
+    )
+  end
+  Images.clear
+end
+
+
+100.times do
+  Favourite.create(
+    user_id: Faker::Number.within(range: 1..25),
+    country_id: Faker::Number.within(range: 1..53)
+  )
 end

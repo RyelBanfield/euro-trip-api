@@ -5,19 +5,19 @@ accessKey = ENV['UNSPLASH_ACCESS_KEY']
 Images = []
 
 25.times do
-  name = Faker::Name.name
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name 
   User.create(
     {
       sub: Faker::Internet.uuid,
-      email: Faker::Internet.email,
-      name: name,
-      given_name: name.split(' ')[0],
-      family_name: name.split(' ')[1],
-      picture: "https://avatars.dicebear.com/api/initials/#{name}.svg"
+      email: first_name + '.' + last_name + '@euro-trip.com',
+      name: first_name + ' ' + last_name,
+      given_name: first_name,
+      family_name: last_name,
+      picture: "https://avatars.dicebear.com/api/initials/#{first_name[0..1]}.svg"
     }
   )
 end
-
 
 countriesResponse = HTTParty.get('https://restcountries.eu/rest/v2/region/europe')
 countriesJSON = countriesResponse.parsed_response
@@ -43,7 +43,6 @@ countriesJSON.each do |country|
   end
   Images.clear
 end
-
 
 100.times do
   Favourite.create(

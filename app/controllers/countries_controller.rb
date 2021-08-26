@@ -7,7 +7,7 @@ class CountriesController < SecuredController
   end
 
   def show
-    country = Country.find(params[:id])
+    country = Country.find_by(name: params[:id])
     render json: country, include: [:images]
   rescue ActiveRecord::RecordNotFound
     head :not_found

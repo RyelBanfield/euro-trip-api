@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :images
+  resources :users
   resources :countries
   resources :favourites
-  resources :users
+  # resources :images
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

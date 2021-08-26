@@ -4,20 +4,20 @@ require 'urlify'
 accessKey = ENV['UNSPLASH_ACCESS_KEY']
 Images = []
 
-25.times do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name 
-  User.create(
-    {
-      sub: Faker::Internet.uuid,
-      email: first_name + '.' + last_name + '@euro-trip.com',
-      name: first_name + ' ' + last_name,
-      given_name: first_name,
-      family_name: last_name,
-      picture: "https://avatars.dicebear.com/api/initials/#{first_name[0..1]}.svg"
-    }
-  )
-end
+# 25.times do
+#   first_name = Faker::Name.first_name
+#   last_name = Faker::Name.last_name 
+#   User.create(
+#     {
+#       sub: Faker::Internet.uuid,
+#       email: first_name + '.' + last_name + '@euro-trip.com',
+#       name: first_name + ' ' + last_name,
+#       given_name: first_name,
+#       family_name: last_name,
+#       picture: "https://avatars.dicebear.com/api/initials/#{first_name[0..1]}.svg"
+#     }
+#   )
+# end
 
 countriesResponse = HTTParty.get('https://restcountries.eu/rest/v2/region/europe')
 countriesJSON = countriesResponse.parsed_response
@@ -44,9 +44,9 @@ countriesJSON.each do |country|
   Images.clear
 end
 
-100.times do
-  Favourite.create(
-    user_id: Faker::Number.within(range: 1..25),
-    country_id: Faker::Number.within(range: 1..53)
-  )
-end
+# 100.times do
+#   Favourite.create(
+#     user_id: Faker::Number.within(range: 1..25),
+#     country_id: Faker::Number.within(range: 1..53)
+#   )
+# end

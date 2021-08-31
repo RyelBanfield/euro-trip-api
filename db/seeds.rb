@@ -2,6 +2,7 @@ require 'faker'
 require 'httparty'
 require 'urlify'
 accessKey = ENV['UNSPLASH_ACCESS_KEY']
+
 Images = []
 
 countriesResponse = HTTParty.get('https://restcountries.eu/rest/v2/region/europe')

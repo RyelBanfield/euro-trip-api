@@ -1,12 +1,13 @@
 require 'net/http'
 require 'uri'
+domain = ENV['AUTH0_DOMAIN']
 
 class JsonWebToken
   def self.verify(token)
     JWT.decode(token, nil,
                true, # Verify the signature of this token
                algorithm: 'RS256',
-               iss: 'https://dev-1olg8n5r.us.auth0.com/',
+               iss: '#{domain}',
                verify_iss: true,
               #  aud: Rails.application.credentials.auth0[:api_identifier],
                verify_aud: true) do |header|

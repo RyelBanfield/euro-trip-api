@@ -1,6 +1,6 @@
 # Back-end Repo For Final Microverse Capstone Project
 
-This project will be submitted as part of my final Microverse Capstone project. It is an API built using Ruby on Rails that will allow users to view information on and favorite their favorite European countries.
+This project will be submitted as part of my final Microverse Capstone project. It is an API built using Ruby on Rails that will allow users to view information on and favourite their favourite European countries.
 
 [Click here to view the frontend repo](https://github.com/RyelBanfield/euro-trip)
 

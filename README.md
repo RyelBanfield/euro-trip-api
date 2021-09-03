@@ -1,24 +1,50 @@
-# README
+# Back-end Repo For Final Microverse Capstone Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project will be submitted as part of my final Microverse Capstone project. It is an API built using Ruby on Rails that will allow users to view information on and favourite their favourite European countries.
 
-Things you may want to cover:
+[Click here to view the frontend repo](https://github.com/RyelBanfield/euro-trip)
 
-* Ruby version
+## Technologies Used
+- Ruby on Rails
+- PostgreSQL
 
-* System dependencies
+## Run Locally
 
-* Configuration
+Clone the project
 
-* Database creation
+```bash
+  git clone https://github.com/RyelBanfield/euro-trip-api.git
+```
 
-* Database initialization
+Go to the project directory
 
-* How to run the test suite
+```bash
+  cd my-project
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Install dependencies
 
-* Deployment instructions
+```bash
+  bundle
+```
 
-* ...
+Run tests
+
+```bash
+  rspec
+```
+
+Start the server
+
+```bash
+  rails s
+```
+
+  ## 👤 Author
+**Ryel Banfield**
+- [GitHub](https://github.com/ryelbanfield)
+- [Twitter](https://twitter.com/ryelbanfield)
+- [LinkedIn](https://www.linkedin.com/in/ryel-banfield/)
+
+## 📝 License
+This project is [MIT](LICENSE) licensed.
